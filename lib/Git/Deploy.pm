@@ -728,9 +728,9 @@ sub make_and_push_dated_tag {
 
     my $date= strftime $date_fmt, localtime;
     my $tag_name= "$prefix-$date";
-    my @message = @_;
+    # my @message = @_; # modified in palce by make_tag
 
-    my $tag= make_tag($tag_name, @message);
+    my $tag= make_tag($tag_name, @_);
 
     execute_deploy_hooks(
         action      => $action,
